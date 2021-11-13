@@ -1,0 +1,32 @@
+<div class="home" id="home" >
+    <div class="home__left">
+        <div class="home__image">
+            <img src="../../assets/image/Untitled-2.png" alt="">
+        </div>
+    </div>
+    <div class="home__right">
+        <div class="home__title">Place your ad here</div>
+        <div class="home__decs">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aut doloremque accusamus nam!</p>
+        </div>
+        <a [routerLink]="['/product']" routerLinkActive="router-link-active"  class="home__btn"><i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+</div>
+<div class="product" id="product" >
+    <div class="product__title">
+        <p>Website</p>
+    </div>
+    <div class="product__content">
+        <div class="product__group">
+            <a *ngFor="let product of products" class="product__item">
+                <img src="{{product.image}}" alt="">
+                <span class="product__item-name" > {{product.name}} </span>
+                <span class="product__item-status" >{{product.status}}</span>
+                <span class="product__item-type" >{{product.type}}</span>
+            </a>                                         
+        </div>
+    </div>
+    <a [routerLink]="['/product']" routerLinkActive="router-link-active"  class="home__btn" style="margin: 0 auto; width : 30%; font-size : 1.6rem; padding : 0.3rem 0 ; cursor: pointer;" >See more</a>
+</div>

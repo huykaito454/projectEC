@@ -1,0 +1,225 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+input {
+  line-height: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+label,
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.8rem;
+}
+$color1: #00308f;
+$color2: #1974d2;
+$color3: #8edfff;
+$color4: #b2ffff;
+$color5: #ededed;
+$text-color: #000;
+$text-white: white;
+$text-gray: #737373;
+$hover: rgb(23, 103, 182);
+
+.container {
+  padding: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+}
+@media screen and (min-width: 1401px) {
+  .container {
+    max-width: 130rem;
+  }
+}
+
+.header {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  border-bottom: 1px solid #ededed;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    cursor: pointer;
+    width: 45%;
+    h1 {
+      color: $color1;
+      font-size: 4rem;
+    }
+  }
+
+  &__nav {
+    width: 45%;
+    padding: 1rem 0;
+    &-group {
+      width: 100%;
+      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+    }
+    &-item {
+      width: calc(100% / 5);
+      list-style: none;
+      text-align: center;
+      font-size: 1.9rem;
+      color: $text-color;
+      &:last-child {
+        i {
+          font-size: 1.8rem;
+          padding: 0 0.8rem;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+.main {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+.footer {
+  border-top: 1px solid #ededed;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    .newsletter {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 0;
+      border-bottom: 1px solid #ededed;
+      &__content {
+        width: 40%;
+      }
+      &__form {
+        width: 60%;
+        text-align: right;
+        input {
+          width: 50%;
+          font-size: 1.4rem;
+          padding: 1.35rem;
+          border: none;
+          color: $text-color;
+          background-color: #ededed;
+          border-radius: 5px;
+        }
+        button {
+          cursor: pointer;
+          border: none;
+          padding: 1.4rem 2.5rem;
+          background-color: $color2;
+          color: white;
+          border-radius: 5px;
+          overflow: hidden;
+          margin-left: -5px;
+          transition: all 0.2s linear;
+          &:hover {
+            background-color: $hover;
+          }
+        }
+      }
+    }
+    .contact {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 2rem 0;
+      font-size: 1.6rem;
+      .title {
+        color: black;
+        padding: 1rem 0;
+        font-weight: 600;
+        text-align: justify;
+      }
+      &__info {
+        width: calc(100% / 4);
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        flex-direction: column;
+      }
+      &__phone {
+        width: calc(100% / 4);
+      }
+      &__social {
+        width: calc(100% / 4);
+        &-icon {
+          width: 60%;
+          display: flex;
+          align-items: stretch;
+          justify-content: space-between;
+          a {
+            color: $color2;
+            i {
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

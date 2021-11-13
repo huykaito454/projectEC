@@ -1,0 +1,33 @@
+<div class="login">
+    <div class="login__left">
+        <form #loginForm="ngForm" class="login__form" (ngSubmit)="OnSubmit()" >
+            <h3 class="login__title">Sign in</h3>
+            <div class="login__form-group">
+                <div class="login__form-item">
+                    <label for="username">User name :</label>
+                    <input type="text" id="username" [(ngModel)]="username" name="name" required >
+                </div>
+                <div class="login__form-item">
+                    <label for="password">Password :</label>
+                    <input type="password" id="password" [(ngModel)]="password" name="password"  required  >
+                </div>
+                <div class="login__form-check">
+                    <input type="checkbox" name="" id="checkbox" >
+                    <label for="checkbox">Remember password ?</label>
+                </div>
+                <div class="login__form-btn" >
+                    <button [disabled]="!loginForm.valid" type="submit"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="login__form-already">
+                <p>Can't login ?</p>
+                <a [routerLink]="['/register']" routerLinkActive="router-link-active" style="margin-left: 1rem;"  >Create account</a>
+            </div>
+        </form>
+    </div>
+    <div class="login__right">
+        <div class="login__img">
+            <img src="../../../assets/image/12.png" alt="">
+        </div>
+    </div>
+</div>

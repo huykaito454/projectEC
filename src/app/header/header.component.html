@@ -1,0 +1,26 @@
+<div class="header">
+    <div class="container">
+        <div class="header__title">
+            
+            <a [routerLink]="['']" routerLinkActive="router-link-active"  class="header__logo">
+                <h1>Site Name</h1>
+            </a>
+            <div class="header__nav">
+                <ul class="header__nav-group">
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="header__nav-item">Home</a>
+                    <a [routerLink]="['/product']" routerLinkActive="router-link-active"  class="header__nav-item">All website</a>
+                    <a href="#contact" class="header__nav-item">Contact</a>
+                    <a href="#contact" class="header__nav-item">About us</a>
+                    <div href="#" class="header__nav-item">
+                        <a [routerLink]="['./account']" routerLinkActive="router-link-active"  class="header-icon">
+                            <i class="far fa-user"></i>
+                        </a>
+                        <a href="./cart.htm" class="header-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

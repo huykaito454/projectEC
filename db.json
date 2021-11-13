@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "product": [
+    {
+      "id": 1,
+      "image": "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/253870324_435036868203345_1970981000561978544_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=-jJVddcnZlUAX9lm_pO&tn=5q8TAZohD0lQzUbg&_nc_ht=scontent.fsgn2-3.fna&oh=c6f30f32dca5b6e67131e819a0d4684d&oe=61B14575",
+      "name": "Kênh 14",
+      "status": "Còn chỗ",
+      "type": "Tin tức tổng hợp"
+    },
+    {
+      "id": 2,
+      "image": "https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.15752-9/255176181_265372212083950_2899086715600176530_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=LNqcUBAZ6iMAX_c9i6h&_nc_ht=scontent.fsgn2-6.fna&oh=e9d43b9b010d6d887263b922d3da5d51&oe=61B06EF3",
+      "name": "24 giờ",
+      "status": "Còn chỗ",
+      "type": "Tin tức tổng hợp"
+    },
+    {
+      "id": 3,
+      "image": "https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.15752-9/255255114_1528920930801731_864847247886501973_n.png?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_ohc=sn6dU0nMNZgAX_eNYtY&_nc_ht=scontent.fsgn2-2.fna&oh=4eb81c5a879a71bc7e67f873364757a3&oe=61B1D173",
+      "name": "Yeah 1",
+      "status": "Còn chỗ",
+      "type": "Tin tức tổng hợp"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyễn Trọng Huy",
+      "email": "tronghuy.832001@gmail.com",
+      "username": "huy123",
+      "password": "huy123"
+    }
+  ]
+}
