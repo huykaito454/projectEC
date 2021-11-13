@@ -4,12 +4,15 @@
     </div>
     <div class="product__content">
         <div class="product__group">
-            <a *ngFor="let product of products" class="product__item">
+            <!-- <a *ngFor="let product of products" class="product__item">
                 <img src="{{product.image}}" alt="">
                 <span class="product__item-name" > {{product.name}} </span>
                 <span class="product__item-status" >{{product.status}}</span>
                 <span class="product__item-type" >{{product.type}}</span>
-            </a>                                         
+            </a>                                          -->
+            <a *ngFor="let product of products" >
+                <p> {{product}} </p>
+            </a>
         </div>
     </div>
 </div>

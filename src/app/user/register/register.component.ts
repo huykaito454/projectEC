@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   isRegisterError : boolean = false;
   public fullName = '';
   public email = '';
-  public userName = '';
+  public phone = '';
   public password = '';
   public passwordConfirm = '';
   constructor( private dataService : ServerHttpService, private router : Router ) { }
@@ -20,9 +20,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   OnSubmit(){
-    const newData = { name : this.fullName, email: this.email,  username : this.userName, password:this.password };
+    const newData = { fullName : this.fullName, email: this.email,  phone : this.phone, password:this.password };
     console.log(newData);
-    this.dataService.postUser(newData).subscribe((data) =>{
+    this.dataService.login(newData).subscribe((data) =>{
       localStorage.setItem('userToken',data.access_token);
       this.router.navigate(['/login']);
     },

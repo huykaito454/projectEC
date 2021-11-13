@@ -9,7 +9,7 @@ import { ServerHttpService } from 'src/app/Service/server-http.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public username = '';
+  public email = '';
   public password = '';
   isLoginError : boolean = false;
   constructor( private dataService : ServerHttpService, private router : Router ) { }
@@ -17,13 +17,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   OnSubmit(){
-    const newData = {username : this.username, password:this.password };
-    this.dataService.postUser(newData).subscribe((data) =>{
-      localStorage.setItem('userToken',data.access_token);
-      this.router.navigate(['/home']);
+    const newData = {email : this.email, password:this.password };
+    console.log(newData);
+    this.dataService.login(newData).subscribe((data) =>{
+      if(data.errCode === 0){
+        localStorage.setItem('userToken',data.access_token);
+        this.router.navigate(['/home']);
+      }
+      else {
+        alert(data.message);
+        this.router.navigate(['/login']);
+      }
+      
     },
-    (err : HttpErrorResponse) => {
+    (errCode : HttpErrorResponse) => {
       this.isLoginError = true;
+      console.log(errCode);
     });
   }
 }

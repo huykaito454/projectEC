@@ -11,21 +11,27 @@ export class ServerHttpService {
       'Content-Type' : 'application/json'
     }),
   }
-  private endpoint = 'http://localhost:1234';
+  private endpoint = 'http://localhost:8081';
   constructor(private httpClient : HttpClient) { }
 
   public getProduct(): Observable<any> {
-    const url = `${this.endpoint}/product`;
+    const url = `${this.endpoint}/get-user`;
     return this.httpClient
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));
   }
-  public postUser(data : any): Observable<any> {
-    const url = `${this.endpoint}/users`;
+  public login(data : any): Observable<any> {
+    const url = `${this.endpoint}/api/login`;
     return this.httpClient
       .post<any>(url, data , this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+  // public register(data : any): Observable<any> {
+  //   const url = `${this.endpoint}/api/login`;
+  //   return this.httpClient
+  //     .post<any>(url, data , this.httpOptions)
+  //     .pipe(catchError(this.handleError));
+  // }
   // public postData(){
   //   const url = `${this.endpoint}`;
   //   return this.httpClient

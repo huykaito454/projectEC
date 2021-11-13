@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   constructor( protected serverHttp :ServerHttpService ) { }
 
   ngOnInit(): void {
-    this.serverHttp.getProduct().subscribe((data) => {
-      this.products = data;
-    })
+    // this.serverHttp.getProduct().subscribe((data) => {
+    //   this.products = data;
+    // })
   }
 
 }
