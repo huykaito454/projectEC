@@ -16,6 +16,13 @@ import { RouterModule} from '@angular/router';
 import { AuthGuard } from './Auth/auth.guard';
 import { Interceptor } from './Auth/Interceptor';
 import { AccountComponent } from './account/account.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PaymentComponent } from './payment/payment.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { AuctionComponent } from './auction/auction.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductUpcomingComponent } from './product-upcoming/product-upcoming.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +34,13 @@ import { AccountComponent } from './account/account.component';
     LoginComponent,
     RegisterComponent,
     AccountComponent,
+    ProductDetailsComponent,
+    PaymentComponent,
+    RechargeComponent,
+    AuctionComponent,
+    CartComponent,
+    ProductUpcomingComponent,
+   
     
   ],
   imports: [
@@ -35,7 +49,8 @@ import { AccountComponent } from './account/account.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+
   ],
   providers: [
     AuthGuard,

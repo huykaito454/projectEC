@@ -1,0 +1,20 @@
+<div class="recharge">
+    <div class="recharge__content">
+        <h3 class="recharge__title">DEPOSIT COIN TO YOUR ACCOUNT</h3>
+        <p style="font-size: 1.6rem; margin : 0.5rem 0; " class="recharge__caption">1 <i style="color: #00308f;"class="fas fa-coins"></i> = 1 USD</p>
+        <span style="font-size:1.6rem;font-weight:550;margin-right:1rem;" >Amount of coins you want to deposit into your account</span>
+        <input style="border:0; border-bottom:1px solid #00308f; width:8rem" type="number" [(ngModel)]="money"  name="money" min="1" id="">
+        <i style="color: #00308f;"class="fas fa-coins"></i>
+        <button class="recharge-btn" (click)="loadMoney(money)" >Confirm</button>
+        <div style="margin-top: 2rem; border:0" class="recharge__box">
+
+
+            <div style="border: 0;" class="recharge__box-item">
+                <div style="margin-top: 5rem; display:flex; align-items: center; justify-content: center;   " id="myPaypalButton"></div>
+            </div>
+
+
+            
+        </div>
+    </div>
+</div>

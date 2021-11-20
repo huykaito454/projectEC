@@ -21,10 +21,16 @@ export class RegisterComponent implements OnInit {
   }
   OnSubmit(){
     const newData = { fullName : this.fullName, email: this.email,  phone : this.phone, password:this.password };
-    console.log(newData);
-    this.dataService.login(newData).subscribe((data) =>{
-      localStorage.setItem('userToken',data.access_token);
-      this.router.navigate(['/login']);
+    this.dataService.register(newData).subscribe((data) =>{
+      // localStorage.setItem('userToken',data.access_token);
+      if (data.errCode === 0 ){
+        alert(data.message);
+        this.router.navigate(['/login']);
+      }
+      else{
+        alert(data.message);
+        this.router.navigate(['/register']);
+      }
     },
     (err : HttpErrorResponse) => {
       this.isRegisterError = true;

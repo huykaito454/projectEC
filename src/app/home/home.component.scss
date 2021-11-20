@@ -9,10 +9,12 @@ $text-gray: #737373;
 $hover: rgb(23, 103, 182);
 .home {
   padding: 6rem 0;
+  // padding-bottom: 6rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
   &__left {
     width: 58%;
   }
@@ -38,18 +40,17 @@ $hover: rgb(23, 103, 182);
   }
   &__btn {
     width: 13rem;
-    padding: 1rem 4rem;
-    background-color: $text-white;
-    color: $color2;
+    padding: 1.2rem 4.2rem;
+    background-color: $color2;
+    color: $text-white;
     border-radius: 0.5rem;
     text-align: center;
-    border: 2px solid $color2;
+    // border: 2px solid $color2;
     box-shadow: 0 0 10px 0 #ededed;
     transition: all 0.2s linear;
 
     &:hover {
-      background-color: $color2;
-      color: $text-white;
+      background-color: #1b67b4;
     }
   }
 }
@@ -106,5 +107,21 @@ $hover: rgb(23, 103, 182);
       color: $text-gray;
       font-size: 1.6rem;
     }
+  }
+}
+.home__btn-see {
+  width: 13rem;
+  padding: 1.2rem 4.2rem;
+  background-color: white;
+  color: $color2;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: 2px solid $color2;
+  box-shadow: 0 0 10px 0 #ededed;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: $color2;
+    color: white;
   }
 }

@@ -1,0 +1,99 @@
+<div style="margin-top: 2rem; font-size : 1.5rem; color :#00308f;cursor: pointer;" class="line">
+    <span [routerLink]="['/']" routerLinkActive="router-link-active"  >Home</span>
+    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
+    <span [routerLink]="['/product']" routerLinkActive="router-link-active" >All web</span>
+    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
+    <span *ngIf="(banner?.webId === 1)" class="product__item-type" >News</span>
+    <span *ngIf="(banner?.webId === 2)" class="product__item-type" >Entertainment</span>
+    <span *ngIf="(banner?.webId === 3)" class="product__item-type" >Education</span>
+    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
+    <span > {{banner?.name}}</span>
+    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
+    <span > {{banner?.name}} : {{banner?.size}}</span> 
+</div>
+<div style="align-items: stretch;" class="product__details">
+    <div class="product__details-left">
+        <div style="margin-bottom: 2rem; margin-top:2rem" class="product__details-title">
+            <span style="margin-right: 0.5rem;">Vùng hiển thị banner đã chọn : </span>
+            <span style="color: red">{{banner?.size}}</span>
+        </div>
+        <div class="product__details-content">
+            <div class="product__details-img">
+                <img src="{{banner?.image}}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="product__details-right">
+        <div style="margin: 2rem 0;" class="product__details-name">
+            <span style="font-weight: 550;" >{{banner?.name}}</span>
+        </div>
+        <!-- <div class="product__details-type">
+            <span>Tin tức tổng hợp</span>
+            <i class="fas fa-circle"></i>
+            <a target="_blank" rel="noopener noreferrer" href="https://kenh14.vn/">kenh14.vn</a>
+        </div> -->
+        <div style="margin-bottom: 3rem; display:flex; align-items: center;" class="product__details-minium-bid">
+            <span style="font-size: 2rem;margin-right:0.5rem"  >Giá khởi điểm : </span>
+            <span style="font-size: 3rem; color : red;margin-right:0.5rem" >{{banner?.price}}</span>
+            <span style="font-size: 3rem; color : red" ><i style="color: #00308f;" class="fas fa-coins"></i></span>
+            <!-- <span>(Nguyễn Trọng Huy)</span> -->
+        </div>
+        <div style="margin-bottom: 3rem;" class="product__details-countdown">
+            <i style="margin-right: 1rem;" class="far fa-hourglass"></i>
+            <span>Thời gian còn lại : </span>
+            <span style="font-size: 2rem; color : red;margin-right : 0.5rem" >{{dayText}} :</span>
+            <span style="font-size: 2rem; color : red;margin-right : 0.5rem" >{{hourText}} :</span>
+            <span style="font-size: 2rem; color : red;margin-right : 0.5rem" >{{minuteText}} :</span>
+            <span style="font-size: 2rem; color : red;margin-right : 0.5rem" >{{secondText}} s</span>
+                             </div>
+         <div style="padding: 2rem; border : 2px solid #00308f; border-radius:0.5rem; margin-bottom : 5rem" class="bid">
+             <div style="color: #00308f; margin-bottom:1.5rem" class="bid__title">
+                 <span style="font-weight: 550;" >ĐẤU GIÁ</span>
+             </div>
+             <div style="margin-bottom: 1rem"  class="product__details-price">
+                <span> Số tiền đấu giá tối thiểu : </span>
+                <span style="font-size: 2rem; color : red" >{{priceMinBid}}</span>
+                <span style="font-size: 2rem; color : red;margin-left : 0.5rem;" ><i style="color: #00308f;" class="fas fa-coins"></i></span>
+            </div> 
+             <div style="margin-bottom: 1rem"  class="product__details-price">
+                <span> Bước giá : </span>
+                <span style="font-size: 2rem; color : red" >{{banner?.price * 0.05}}</span>
+                <span style="font-size: 2rem; color : red;margin-left : 0.5rem;" ><i style="color: #00308f;" class="fas fa-coins"></i></span>
+            </div> 
+           
+            <form (ngSubmit)="bid()" class="product__details-maxium-bid"  >
+                <div style="margin-bottom: 1rem; display:flex;  justify-content: space-between;" class="bid-price">
+                    <label for="maxium">Nhập giá tối đa của bạn:</label>
+                    <input style="width : 50%" type="number" maxlength="10" id="maxium" [(ngModel)]="price" name="maxium" required >
+                    <span style="color: red; margin-left : 0.2rem;"><i style="color: #00308f;" class="fas fa-coins"></i></span>
+                </div>
+            <button type="submit" >ĐẶT GIÁ <i style="margin-left: 0.5rem; font-size : 1.8rem" class="far fa-hand-spock"></i></button>
+            </form>
+        </div>
+        <div class="cart">
+            <div class="account__table-cart">
+                <form action="" class="account__form">
+                    <h3 class="account__form-title">LỊCH SỬ ĐẶT GIÁ</h3>
+                    <table class="table">
+                        <thead>
+                            <th style="width: 30%" >Ngày giờ</th>
+                            <th style="width: 40%" >Người tham gia</th>
+                            <th style="width: 30%" >Giá đặt</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let table of tables" >
+                                <td>{{table?.date}}</td>
+                                <td *ngIf="(idUser === table?.userId)" >{{table?.userName}} <span class="me">tôi</span></td>
+                                <td *ngIf="(idUser !== table?.userId)" >{{table?.userName}}</td>
+                                <td style="color: red;" >{{table?.price}} <i style="color: #00308f;margin-left : 0.5rem" class="fas fa-coins"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+

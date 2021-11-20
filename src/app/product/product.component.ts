@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IdService } from '../Service/id.service';
 import { ServerHttpService } from '../Service/server-http.service';
 
 @Component({
@@ -8,14 +10,21 @@ import { ServerHttpService } from '../Service/server-http.service';
 })
 export class ProductComponent implements OnInit {
   public products:any;
-
-  constructor(private dataService : ServerHttpService) { }
+  public webID = [];
+  constructor(private dataService : ServerHttpService, private router : Router, private id : IdService) { }
 
   ngOnInit(): void {
-    this.dataService.getProduct().subscribe((data) => {
-      this.products = data;
-      console.log(this.products);
+    this.dataService.getWeb().subscribe((data) => {
+      this.products = data.listWeb;
     })
   }
-
+  // wait(timer = 0){
+  //   return new Promise(function(resolve,reject){
+  //     setTimeout(resolve,timer);
+  //   })
+  // }
+  loadBanner(data:any){
+    this.id.loadBanner(data);
+  }
+  
 }

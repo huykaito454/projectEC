@@ -18,11 +18,13 @@ export class LoginComponent implements OnInit {
   }
   OnSubmit(){
     const newData = {email : this.email, password:this.password };
-    console.log(newData);
     this.dataService.login(newData).subscribe((data) =>{
       if(data.errCode === 0){
         localStorage.setItem('userToken',data.access_token);
-        this.router.navigate(['/home']);
+        localStorage.setItem('userID',data.user.id);
+        localStorage.setItem('userMoney',data.user.money);
+        this.router.navigate(['/']);
+        
       }
       else {
         alert(data.message);

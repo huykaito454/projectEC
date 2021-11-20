@@ -1,18 +1,18 @@
 <div class="account">
     <div class="account__profile">
         <div class="account__background">
-            <img src="../../assets/image/1719768.jpg" alt="">
+            <img src="https://i.pinimg.com/originals/36/f0/94/36f0949c623b61a235fd6645fa507236.jpg" alt="">
         </div>
         <div class="account__title">
             <div class="account__avatar">
-                <img src="https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/97563806_2656875631248579_3206429855126126592_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=174925&_nc_ohc=DXbDzh26x-IAX-90Ikg&_nc_ht=scontent.fsgn13-2.fna&oh=417248145badb36a75d992f98fe315d3&oe=61AADCBD" alt="">
+                <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg" alt="">
             </div>
             <div class="account__infor">
-                <span class="name" >Nguyễn Trọng Huy</span>
+                <span class="name" >{{user?.fullName}}</span>
                 <div class="total" >
                     <p>Total money :</p>
-                    <span class="money" >999999</span>
-                    <i class="fas fa-coins"></i>
+                    <span class="money" >{{user?.money}}</span>
+                    <i style="color: #00308f;" class="fas fa-coins"></i>
                 </div>
             </div>
         </div>
@@ -20,13 +20,13 @@
             <div class="account__bar-item">
                 <span>Customer</span>
             </div>
-            <a href="" class="account__bar-item">
+            <a [routerLink]="['/recharge']" routerLinkActive="router-link-active"  class="account__bar-item">
                 <i class="fas fa-coins"></i>
                 <i style="font-size: 1.4rem" class="fas fa-plus"></i>
             </a>
             <a (click)="logOut()" style="background-color: 
-            #1974d2; border-radius:2rem; " class="account__bar-item">
-                <i style="color: white; padding: 0.7rem;cursor: pointer;" class="fas fa-power-off"></i>
+            red; border-radius:0.5rem; " class="account__bar-item">
+                <i style="color: white; padding: 0.7rem ;cursor: pointer;" class="fas fa-power-off"></i> <span style="padding-right: 0.7rem; color : white; font-weight : 550;cursor: pointer;"  >LOGOUT</span>
             </a>
         </div>
     </div>
@@ -37,27 +37,25 @@
                 <div class="account__form-group">
                     <div class="account__form-item">
                         <label for="email">Email :</label>
-                        <input type="email" value="tronghuy.832001@gmail.com">
+                        <input type="email" value="{{user?.email}}" readonly>
                     </div>
                     <div class="account__form-item">
                         <label for="fullname">Full name :</label>
-                        <input type="text" value="Nguyễn Trọng Huy">
+                        <input type="text" value="{{user?.fullName}}" readonly>
                     </div>
-                    <div class="account__form-item">
+                    <!-- <div class="account__form-item">
                         <label for="username">User name :</label>
                         <input type="text" value="huykaito454" readonly>
-                    </div>
+                    </div> -->
                     <div class="account__form-item">
                         <label for="phone">Phone number :</label>
-                        <input type="text" value="0937899623">
+                        <input type="text" value="{{user?.phone}}" readonly>
                     </div>
                     <div class="account__form-item">
-                        <label for="address">Address :</label>
-                        <input type="text" value="Ho Chi Minh City">
+                        <label for="address">Current coin :</label>
+                        <input type="text" value="{{user?.money}}" readonly>
                     </div>
-                    <div class="account__form-btn" >
-                        <button type="submit">Update</button>
-                    </div>
+                    
                 </div>
             </form>
         </div>
@@ -67,44 +65,16 @@
                 <table class="table">
                     <thead>
                         <th style="width: 20%" >Date created</th>
-                        <th style="width: 15%" >ID Order</th>
                         <th style="width: 30%" >Order name</th>
-                        <th style="width: 25%" >Total</th>
-                        <th style="width: 10%" >Details</th>
+                        <th style="width: 30%" >Your Banner</th>
+                        <th style="width: 20%" >Total</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1-1-2001</td>
-                            <td>01</td>
-                            <td>Banner 300x600px Kenh14</td>
-                            <td>100</td>
-                            <td>
-                                <a href="" class="account__form-btn" >
-                                    <button type="submit">Details</button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1-1-2001</td>
-                            <td>01</td>
-                            <td>Banner 300x600px Kenh14</td>
-                            <td>100</td>
-                            <td>
-                                <a href="" class="account__form-btn" >
-                                    <button type="submit">Details</button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1-1-2001</td>
-                            <td>01</td>
-                            <td>Banner 300x600px Kenh14</td>
-                            <td>100</td>
-                            <td>
-                                <a href="" class="account__form-btn" >
-                                    <button type="submit">Details</button>
-                                </a>
-                            </td>
+                        <tr *ngFor="let order of orders" >
+                            <td>{{order.updatedAt | date:'short'}}</td>
+                            <td>{{order.Auction.Banner.name}} : {{order.Auction.Banner.size}}</td>
+                            <td> URL image : {{order.yourBanner}} </td>
+                            <td style="color: red;" >{{order.Auction.auctionMoney}}<i style="color: #00308f; margin-left : 1rem " class="fas fa-coins"></i> </td>
                         </tr>
                     </tbody>
                 </table>

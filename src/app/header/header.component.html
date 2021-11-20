@@ -1,3 +1,14 @@
+<div class="top__bar">
+    <div class="container">
+        <div class="phone">
+            <i style="margin-right: 0.5rem;" class="fas fa-headset"></i> Hotline : 19000000
+        </div>
+        <div class="email">
+            <i style="margin-right: 0.5rem;" class="fas fa-envelope"></i> Email : sitename@gmail.com
+        </div>
+
+    </div>
+</div>
 <div class="header">
     <div class="container">
         <div class="header__title">
@@ -15,7 +26,7 @@
                         <a [routerLink]="['./account']" routerLinkActive="router-link-active"  class="header-icon">
                             <i class="far fa-user"></i>
                         </a>
-                        <a href="./cart.htm" class="header-icon">
+                        <a [routerLink]="['/cart']" routerLinkActive="router-link-active"  class="header-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </div>
