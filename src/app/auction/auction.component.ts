@@ -42,11 +42,9 @@ export class AuctionComponent implements OnInit {
       this.priceMinBid = data.auction.auctionMoney;
       this.tests = sessionStorage.getItem("test");
       this.tables = JSON.parse(this.tests);
-      const utc2 = new Date(this.auction.date).toDateString(); // ngày tháng kết thúc 
-      const dateEnd = `${utc2} ${this.auction.timeEnd} GMT+0700 (Indochina Time)`; 
-      const endDate = new Date(dateEnd).getTime();
+      const dateEnd = new Date(this.auction.timeEnd).getTime();
       this.autoGet();
-      this.setInterval(endDate);
+      this.setInterval(dateEnd);
     })
     
   }  
@@ -110,21 +108,22 @@ export class AuctionComponent implements OnInit {
         this.topAuctionID = results[0].userId;
       }
       this.tables = results;
+      console.log(this.tables);
       sessionStorage.setItem("test",JSON.stringify(results));
   })
   }
 
   bid(){
     const userMoney = localStorage.getItem('userMoney');
-    if(this.price > (this.priceMinBid + (this.banner.price * 0.05) )&& Number(this.price) <= Number(userMoney)  ){
-      const  idUser = localStorage.getItem("userID");
-      this.socket.socket.emit("SendToServer",this.idAuction,this.price,idUser);     
-    }
-    else if (this.price < this.priceMinBid + (this.banner.price * 0.05)) {
+    if (this.price < this.priceMinBid + (this.banner.price * 0.05)) {
       alert("Số tiền đặt giá phải lớn hơn giá tối thiểu + bước giá");
     }
     else if ( Number(this.price) > Number(userMoney)){
       alert("Số tiền trong tài khoản bạn không đủ");
+    }
+    else{
+      const  idUser = localStorage.getItem("userID");
+      this.socket.socket.emit("SendToServer",this.idAuction,this.price,idUser); 
     }
     }
 }

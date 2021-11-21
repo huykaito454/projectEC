@@ -22,6 +22,10 @@ import { RechargeComponent } from './recharge/recharge.component';
 import { AuctionComponent } from './auction/auction.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductUpcomingComponent } from './product-upcoming/product-upcoming.component';
+import { ProductAllComponent } from './product/product-all/product-all.component';
+import { ProductNewsComponent } from './product/product-news/product-news.component';
+import { ProductEntaiComponent } from './product/product-entai/product-entai.component';
+import { ProductEduComponent } from './product/product-edu/product-edu.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { ProductUpcomingComponent } from './product-upcoming/product-upcoming.co
     AuctionComponent,
     CartComponent,
     ProductUpcomingComponent,
+    ProductAllComponent,
+    ProductNewsComponent,
+    ProductEntaiComponent,
+    ProductEduComponent,
    
     
   ],

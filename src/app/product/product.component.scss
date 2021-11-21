@@ -8,7 +8,7 @@ $text-white: white;
 $text-gray: #737373;
 $hover: rgb(23, 103, 182);
 .product {
-  width: 100%;
+  min-width: 128rem;
   margin-top: 0rem;
   .container {
     display: flex;

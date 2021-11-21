@@ -56,7 +56,7 @@
         </div>
         <div class="product__details-status">
             <span>Tình trạng : </span>
-            <span *ngIf="(banner?.Auctions.status ===  1)"  class="status">Đang diễn ra</span>
+            <span class="status">Đang diễn ra</span>
         </div>
         <a (click)="loadID(banner)" (click)="loadTable(banner.id)" [routerLink]="['/auction']" routerLinkActive="router-link-active"  *ngIf="(banner.Auctions.status === 1)" class="product__details-button">
                     <i class="fas fa-cart-plus"></i>

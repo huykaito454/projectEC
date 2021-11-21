@@ -54,17 +54,17 @@
         </div>
         <div class="product__details-status">
             <span>Tình trạng : </span>
-            <span *ngIf="(banner?.Auctions.status ===  0)" style="color: red;"  class="status">Sắp diễn ra</span>
+            <span style="color: red;"  class="status">Sắp diễn ra</span>
         </div>
         <div class="product__details-status">
             
             <span>Bắt đầu vào ngày : </span>
-            <span class="status">{{banner?.Auctions.date | date:'fullDate'}}</span>
+            <span class="status">{{banner?.Auctions.timeStart | date:'fullDate'}}</span>
         </div>
         <div class="product__details-status">
             <i style="margin-right: 1rem;" class="fas fa-hourglass-start"></i>
             <span>Vào lúc : </span>
-            <span class="status">{{banner?.Auctions.timeEnd }}</span>
+            <span class="status">{{banner?.Auctions.timeStart | date:'mediumTime' }}</span>
         </div>
     </div>
     

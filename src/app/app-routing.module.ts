@@ -12,12 +12,16 @@ import { RechargeComponent } from './recharge/recharge.component';
 import { AuctionComponent } from './auction/auction.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductUpcomingComponent } from './product-upcoming/product-upcoming.component';
+import { ProductNewsComponent } from './product/product-news/product-news.component';
+import { ProductAllComponent } from './product/product-all/product-all.component';
+import { ProductEntaiComponent } from './product/product-entai/product-entai.component';
+import { ProductEduComponent } from './product/product-edu/product-edu.component';
 
 
 const routes: Routes = [
   {path : '',component : HomeComponent},
   {path : 'home',component : HomeComponent },
-  {path : 'product',component : ProductComponent},
+  // {path : 'product',component : ProductComponent},
   {path : 'product-details',component : ProductDetailsComponent, canActivate:[AuthGuard] },
   {path : 'account',component : AccountComponent, canActivate:[AuthGuard] },
   {path : 'recharge',component : RechargeComponent, canActivate:[AuthGuard] },
@@ -34,6 +38,22 @@ const routes: Routes = [
   },
   {
     path : '', redirectTo:'/login',pathMatch: 'full'
+  },
+  {
+    path : 'product-news',component : ProductComponent,
+    children : [{path: '',component : ProductNewsComponent}] 
+  },
+  {
+    path : 'product',component : ProductComponent,
+    children : [{path: '',component : ProductAllComponent}] 
+  },
+  {
+    path : 'product-entertainment',component : ProductComponent,
+    children : [{path: '',component :ProductEntaiComponent}] 
+  },
+  {
+    path : 'product-education',component : ProductComponent,
+    children : [{path: '',component : ProductEduComponent}] 
   },
   
 ];

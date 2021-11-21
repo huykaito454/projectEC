@@ -29,6 +29,13 @@ export class ServerHttpService {
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+  public getWebCategory(): Observable<any> {
+    const Category = sessionStorage.getItem('Category');
+    const  url = `${this.endpoint}/api/get-web-by-category?categoryId=${Category}`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
   
   private idUser = localStorage.getItem('userID');
   public getUser(): Observable<any> {
@@ -58,7 +65,7 @@ export class ServerHttpService {
   }
   public getWebBanner(): Observable<any> { 
     const idBanner = sessionStorage.getItem('bannerID');
-    const url = `${this.endpoint}/api/get-banner-by-webId?id=${idBanner}&&status=1`;
+    const url = `${this.endpoint}/api/get-banner-by-webId?id=${idBanner}&&status=1`;  
     return this.httpClient
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));

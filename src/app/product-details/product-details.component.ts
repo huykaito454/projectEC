@@ -20,7 +20,6 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getWebBanner().subscribe((data) => {
       this.banners = data.listBanner;
-      console.log(this.banners);
     })
     this.dataService.getWebId().subscribe((data) =>{
       this.web = data;

@@ -13,6 +13,12 @@ export class IdService {
       sessionStorage.setItem('bannerID',data);
     })
   }
+  loadCatalog(data:any){
+    this.webID.next(data);
+    this.currentID.subscribe((data)=>{
+      sessionStorage.setItem('Category',data);
+    })
+  }
   loadAuction(data:any){
     this.webID.next(data.Auctions.id);
     this.currentID.subscribe((data)=>{
