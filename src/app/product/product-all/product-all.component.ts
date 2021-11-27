@@ -17,7 +17,7 @@ export class ProductAllComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getWeb().subscribe((data) => {
       this.products = data.listWeb;
-      console.log(data);
+
     })
   }
   // wait(timer = 0){

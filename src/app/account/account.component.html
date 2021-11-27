@@ -55,6 +55,9 @@
                         <label for="address">Current coin :</label>
                         <input type="text" value="{{user?.money}}" readonly>
                     </div>
+                    <div class="account__form-btn">
+                       <button *ngIf="(user?.roleId === 2)" [routerLink]="['/manage']" routerLinkActive="router-link-active"  >Manage</button>
+                    </div>
                     
                 </div>
             </form>
@@ -72,9 +75,9 @@
                     <tbody>
                         <tr *ngFor="let order of orders" >
                             <td>{{order.updatedAt | date:'short'}}</td>
-                            <td>{{order.Auction.Banner.name}} : {{order.Auction.Banner.size}}</td>
+                            <td>{{order.Auction?.Banner.name}} : {{order.Auction?.Banner.size}}</td>
                             <td> URL image : {{order.yourBanner}} </td>
-                            <td style="color: red;" >{{order.Auction.auctionMoney}}<i style="color: #00308f; margin-left : 1rem " class="fas fa-coins"></i> </td>
+                            <td style="color: red;" >{{order.Auction?.auctionMoney}}<i style="color: #00308f; margin-left : 1rem " class="fas fa-coins"></i> </td>
                         </tr>
                     </tbody>
                 </table>

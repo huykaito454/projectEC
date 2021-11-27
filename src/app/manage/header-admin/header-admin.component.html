@@ -1,0 +1,32 @@
+<div class="top__bar">
+    <div style="min-width:130rem" class="container">
+        <div class="phone">
+            <i style="margin-right: 0.5rem;" class="fas fa-headset"></i> Hotline : 19000000
+        </div>
+        <div style="margin-right: 0;" class="email">
+            <i style="margin-right: 0" class="fas fa-envelope"></i> Email : sitename@gmail.com
+        </div>
+
+    </div>
+</div>
+<div class="header">
+    <div style="min-width:130rem" class="container">
+        <div class="header__title">
+            
+            <a  [routerLink]="['']" routerLinkActive="router-link-active"  class="header__logo">
+                <h1>Admin</h1>
+            </a>
+            <div class="header__nav">
+                <ul style="display: flex;
+                align-items: end;
+                justify-content: end;" class="header__nav-group">
+                    <div  class="header__nav-item">
+                        <a style="cursor: pointer;" (click)="logOut()" class="header-icon">
+                            <i style="color: red;" class="fas fa-power-off"></i>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

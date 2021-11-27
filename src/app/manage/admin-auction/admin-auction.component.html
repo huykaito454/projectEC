@@ -1,0 +1,75 @@
+
+    <div class="container__right-content">
+        <h3 style="color: #00308f;" >Thêm cuộc đấu giá mới</h3>
+        <form (ngSubmit)="postAuction()" class="add__web"> 
+            <div class="add__web-item">
+                <label for="">ID Banner</label>
+                    <input type="text" [(ngModel)]="idBanner" name="name" >
+            </div> 
+            <div class="add__web-item">
+                <label for="">Thời gian bắt đầu</label>
+                    <input type="datetime-local" [(ngModel)]="timeStart" name="link" >
+            </div> 
+            <div class="add__web-item">
+                <label for="">Thời gian kết thúc</label>
+                    <input type="datetime-local" [(ngModel)]="timeEnd" name="img">
+            </div> 
+
+            <!-- <div class="add__web-item select">
+                <label for="">Banner của website</label>
+
+                <select style="margin-left: 7.2rem;"  (change)="select($event)" >
+                    <option *ngFor="let webCategory of webCategorys" [value]="webCategory.id">{{webCategory.name}}</option>
+                </select>
+            </div> -->
+            <div class="add__web-btn">
+                    <button type="submit" >Thêm cuộc đấu giá</button>
+            </div> 
+
+        </form>
+        <div class="container__right-btn">
+            <div (click)="loadAll()" class="btn-item">
+                Tất cả đấu giá
+            </div>
+            <div (click)="loadAuction(1)"  class="btn-item">
+                Đấu giá đang diễn ra
+            </div>
+            <div (click)="loadAuction(0)"  class="btn-item">
+                Đấu giá sắp diễn ra
+            </div>
+        </div>
+        </div>
+        <table class="table">
+            <thead>
+                <th style="width: 10%" >ID</th>
+                <th style="width: 10%" >ID Banner</th>
+                <th style="width: 25%" >Thời gian bắt đầu</th>
+                <th style="width: 25%" >Thời gian kết thúc</th>
+                <th style="width: 10%" >Trạng thái</th>
+                <th style="width: 10%" >Giá đấu giá</th>
+                <th style="width: 10%" >Hàng động</th>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor="let auction of auctions">
+                    <td>{{auction.id}}</td>
+                    <td> <input type="text" [(ngModel)]="auction.bannerId"></td>
+                    <td><span>{{auction.timeStart |date:'short'}}</span></td>
+                    <td>
+                        <span>{{auction.timeEnd |date:'short'}}</span>
+                    </td>
+                    <td><input type="text" readonly [(ngModel)]="auction.status"></td>
+                    <td><input type="text" readonly [(ngModel)]="auction.auctionMoney"  ></td>
+                    <td>
+                        <i (click)="updateBanner(auction)" class="fas fa-edit icon"></i>
+                        <i (click)="deleteBanner(auction)" style="color: red;" class="fas fa-trash-alt icon"></i>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      
+   
+   
+
+

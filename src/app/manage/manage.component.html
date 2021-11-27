@@ -1,0 +1,32 @@
+
+<app-header-admin></app-header-admin>
+<div class="main">
+    <div  style="min-width: 130rem;" class="container">
+        <h3 class="title" >
+        <span *ngIf="id === 1"  >TÀI KHOẢN</span>
+        <span *ngIf="id === 2"  >WEBSITE</span>
+        <span *ngIf="id === 3"  >BANNER</span>
+        <span *ngIf="id === 4"  >ĐẤU GIÁ</span>
+        <span *ngIf="id === 5"  >LỊCH SỬ ĐƠN HÀNG</span>
+    </h3>
+                   <div class="container__content">
+                       <div class="container__left">
+                           <ul class="container__menu" >
+                               <li (click)="load(1)" class="container__menu-item">Tài khoản</li>
+                               <li (click)="load(2)" class="container__menu-item">Website</li>
+                               <li (click)="load(3)" class="container__menu-item">Banner</li>
+                               <li (click)="load(4)" class="container__menu-item">Đấu giá</li>
+                               <li (click)="load(5)" class="container__menu-item">Lịch sử đơn </li>
+                           </ul>
+                       </div>
+                       <div class="container__right">
+                           <app-customer *ngIf="id === 1" ></app-customer>
+                           <app-web *ngIf="id === 2"  ></app-web>
+                           <app-banner *ngIf="id === 3"  ></app-banner>
+                           <app-admin-auction *ngIf="id === 4"  ></app-admin-auction>
+                           <app-admin-order *ngIf="id === 5"  ></app-admin-order>
+                       </div>
+                   </div>
+
+    </div>
+</div>

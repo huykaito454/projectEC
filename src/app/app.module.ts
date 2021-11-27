@@ -26,6 +26,14 @@ import { ProductAllComponent } from './product/product-all/product-all.component
 import { ProductNewsComponent } from './product/product-news/product-news.component';
 import { ProductEntaiComponent } from './product/product-entai/product-entai.component';
 import { ProductEduComponent } from './product/product-edu/product-edu.component';
+import { ManageComponent } from './manage/manage.component';
+import { HeaderAdminComponent } from './manage/header-admin/header-admin.component';
+import { CustomerComponent } from './manage/customer/customer.component';
+import { WebComponent } from './manage/web/web.component';
+import { BannerComponent } from './manage/banner/banner.component';
+import { AdminAuctionComponent } from './manage/admin-auction/admin-auction.component';
+import { AdminOrderComponent } from './manage/admin-order/admin-order.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +56,15 @@ import { ProductEduComponent } from './product/product-edu/product-edu.component
     ProductNewsComponent,
     ProductEntaiComponent,
     ProductEduComponent,
+    ManageComponent,
+    HeaderAdminComponent,
+    CustomerComponent,
+    WebComponent,
+    BannerComponent,
+    AdminAuctionComponent,
+    AdminOrderComponent,
+   
+   
    
     
   ],

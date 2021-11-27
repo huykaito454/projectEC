@@ -65,22 +65,33 @@ export class AuctionComponent implements OnInit {
       this.secondText = seconds;
     }
   else {
-    const winUser = localStorage.getItem("userID");
-    const topUser = this.tables[0].userId.toString();
-    if(winUser === topUser ){
-      const newData = {userId : this.tables[0].userId, auctionId : this.idAuction }
-      console.log(newData)
+    
+    if(this.tables.length === 0){
+      const newData = {userId : '999999', auctionId : this.idAuction }
       this.getAuction.winAuction(newData).subscribe((data) => {
         
       });
-      alert("Chúc mừng bạn đã đấu giá thành công");
-      clearInterval(this.interval);
-      this.router.navigate(['/cart']);
-    }
-    else{
-      alert("Đấu giá thất bại");
+      alert("Phiên đấu giá kết thúc");
       clearInterval(this.interval);
       this.router.navigate(['/home']);
+    }
+    else{
+      const winUser = localStorage.getItem("userID");
+      const topUser = this.tables[0].userId.toString();
+      if(winUser === topUser ){
+        const newData = {userId : this.tables[0].userId, auctionId : this.idAuction }
+        this.getAuction.winAuction(newData).subscribe((data) => {
+          
+        });
+        alert("Chúc mừng bạn đã đấu giá thành công");
+        clearInterval(this.interval);
+        this.router.navigate(['/cart']);
+      }
+      else{
+        alert("Đấu giá thất bại");
+        clearInterval(this.interval);
+        this.router.navigate(['/home']);
+      }
     }
   }
   
@@ -108,7 +119,7 @@ export class AuctionComponent implements OnInit {
         this.topAuctionID = results[0].userId;
       }
       this.tables = results;
-      console.log(this.tables);
+      console.log(this.tables.length);
       sessionStorage.setItem("test",JSON.stringify(results));
   })
   }

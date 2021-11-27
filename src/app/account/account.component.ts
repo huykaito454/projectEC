@@ -25,6 +25,8 @@ export class AccountComponent implements OnInit {
     localStorage.removeItem('userToken');
     localStorage.removeItem('userID');
     localStorage.removeItem('userMoney');
+    localStorage.removeItem('role');
+    sessionStorage.removeItem('bannerID');
     this.router.navigate(['./home']);
   }
 }

@@ -1,0 +1,56 @@
+
+    <div class="container__right-content">
+        <h3 style="color: #00308f;" >Thêm website mới</h3>
+        <form (ngSubmit)="postWeb()" class="add__web"> 
+            <div class="add__web-item">
+                <label for="">Tên website</label>
+                    <input type="text" [(ngModel)]="webName" name="name" >
+            </div> 
+            <div class="add__web-item">
+                <label for="">Link website</label>
+                    <input type="text" [(ngModel)]="webLink" name="link" >
+            </div> 
+            <div class="add__web-item">
+                <label for="">Link hình ảnh website</label>
+                    <input type="text" [(ngModel)]="webImage" name="img">
+            </div> 
+            <div class="add__web-item select">
+                <label for="">Loại website</label>
+
+                <select style="margin-left: 13rem;"  (change)="select($event)" >
+                    <option *ngFor="let webCategory of webCategorys" [value]="webCategory.id">{{webCategory.name}}</option>
+                </select>
+            </div>
+            <div class="add__web-btn">
+                    <button type="submit" >Thêm website</button>
+            </div> 
+
+        </form>
+        <table class="table">
+            <thead>
+                <th style="width: 10%" >ID</th>
+                <th style="width: 15%" >Tên web</th>
+                <th style="width: 15%" >Link web</th>
+                <th style="width: 35%" >Hình ảnh</th>
+                <th style="width: 10%" >Loại</th>
+                <th style="width: 15%" >Hàng động</th>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor="let web of webs">
+                    <td>{{web.id}}</td>
+                    <td><input type="text" [(ngModel)]="web.name"></td>
+                    <td><input type="text" [(ngModel)]="web.link"></td>
+                    <td><input type="text" [(ngModel)]="web.image"></td>
+                    <td><input type="text" readonly  [(ngModel)]="web.CategoryWeb.name"></td>
+                    <td>
+                        <i (click)="updateWeb(web)" class="fas fa-edit icon"></i>
+                        <i (click)="deleteWeb(web)" style="color: red;" class="fas fa-trash-alt icon"></i>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       </div>
+   
+   

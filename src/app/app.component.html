@@ -1,10 +1,12 @@
-<app-header></app-header>
+<app-header *ngIf="roleId === 1" ></app-header>
 <!-------------------------------------------------------------------------------------Header-->
-<div class="main">
+<div *ngIf="roleId === 1" class="main">
         <div class="container">
                 <router-outlet >     
                 </router-outlet>  
         </div>
 </div>
 <!-------------------------------------------------------------------------------------Footer-->
-<app-footer></app-footer>
+<app-footer *ngIf="roleId === 1" ></app-footer>
+<router-outlet name="admin" *ngIf="roleId === 2" >
+</router-outlet> 

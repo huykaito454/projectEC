@@ -16,6 +16,117 @@ export class ServerHttpService {
   private endpoint = 'http://localhost:8081';
   constructor(private httpClient : HttpClient, private id : IdService) { }
 
+  //--------------------------------------------------------------------------------------- Admin
+  public getAllUser(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-user`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getAllBanner(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-banner`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getAllCategory(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-category`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getAllWeb(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-web`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getAllOrder(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-win-auction`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getOrderUserId(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-win-auction-by-user?userId=${data}`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getAllAuction(): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-all-auction`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public getWillAuction(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/get-will-auction?status=${data}`;
+    return this.httpClient
+      .get<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public deleteUser(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/delete-user?id=${data}`;
+    return this.httpClient
+      .delete<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public deleteWeb(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/detele-web?id=${data}`;
+    return this.httpClient
+      .delete<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public deleteBanner(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/detele-banner?id=${data}`;
+    return this.httpClient
+      .delete<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public postUser(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/post-user`;
+    return this.httpClient
+      .post<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public postAuction(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/post-auction`;
+    return this.httpClient
+      .post<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public postWeb(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/post-web`;
+    return this.httpClient
+      .post<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public postBanner(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/post-banner`;
+    return this.httpClient
+      .post<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public putUser(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/put-user`;
+    return this.httpClient
+      .put<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public putBanner(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/put-banner`;
+    return this.httpClient
+      .put<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  public putWeb(data : any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/put-web`;
+    return this.httpClient
+      .put<any>(url, data , this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+  //--------------------------------------------------------------------------------------- Client 
+
   public getWeb(): Observable<any> {
     const url = `${this.endpoint}/api/get-webs`;
     return this.httpClient
@@ -37,21 +148,23 @@ export class ServerHttpService {
       .pipe(catchError(this.handleError));
   }
   
-  private idUser = localStorage.getItem('userID');
   public getUser(): Observable<any> {
-    const url = `${this.endpoint}/api/get-user?id=${this.idUser}`;
+    const idUser = localStorage.getItem('userID');
+    const url = `${this.endpoint}/api/get-user?id=${idUser}`;
     return this.httpClient
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));
   }
   public getCart(): Observable<any> {
-    const url = `${this.endpoint}/api/get-your-cart?id=${this.idUser}`;
+    const idUser = localStorage.getItem('userID');
+    const url = `${this.endpoint}/api/get-your-cart?id=${idUser}`;
     return this.httpClient
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));
   }
   public getOrder(): Observable<any> {
-    const url = `${this.endpoint}/api/get-your-order?id=${this.idUser}`;
+    const idUser = localStorage.getItem('userID');
+    const url = `${this.endpoint}/api/get-your-order?id=${idUser}`;
     return this.httpClient
       .get<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));

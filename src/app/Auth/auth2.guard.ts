@@ -6,21 +6,23 @@ import { ServerHttpService } from '../Service/server-http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class Auth2Guard implements CanActivate {
   public roleId:any;
-  constructor(private router : Router){}
+  constructor(private router : Router, private getRole : ServerHttpService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
-    if(localStorage.getItem('userToken') !== null){
+      this.getRole.getUser().subscribe((data) =>{
+        this.roleId = data.user.roleId;
+        console.log(this.roleId);
+      })
+    if(this.roleId === 2 ){
       return true;
     }
     else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
       return false;
     }
-
   }
- 
   
 }

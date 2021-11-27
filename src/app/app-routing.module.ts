@@ -16,6 +16,12 @@ import { ProductNewsComponent } from './product/product-news/product-news.compon
 import { ProductAllComponent } from './product/product-all/product-all.component';
 import { ProductEntaiComponent } from './product/product-entai/product-entai.component';
 import { ProductEduComponent } from './product/product-edu/product-edu.component';
+import { ManageComponent } from './manage/manage.component';
+import { Auth2Guard } from './Auth/auth2.guard';
+
+import { CustomerComponent } from './manage/customer/customer.component';
+import { WebComponent } from './manage/web/web.component';
+
 
 
 const routes: Routes = [
@@ -55,6 +61,8 @@ const routes: Routes = [
     path : 'product-education',component : ProductComponent,
     children : [{path: '',component : ProductEduComponent}] 
   },
+  {path : '',component : ManageComponent,outlet:'admin'},
+
   
 ];
 

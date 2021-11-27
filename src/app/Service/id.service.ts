@@ -6,7 +6,26 @@ import { BehaviorSubject } from 'rxjs';
 export class IdService {
   private webID = new BehaviorSubject('');
   currentID = this.webID.asObservable();
+  private roleID = new BehaviorSubject('1');
+  getRole = this.roleID.asObservable();
+  private idManage = new BehaviorSubject('1');
+  getIdManage = this.idManage.asObservable();
   constructor() { }
+
+  loadIdManage(data:any){
+    this.idManage.next(data);
+    this.getIdManage.subscribe((data)=>{
+      sessionStorage.setItem('idManage',data);
+    })
+    
+  }
+  loadRole(data:any){
+    this.roleID.next(data);
+    this.getRole.subscribe((data)=>{
+      localStorage.setItem('role',data);
+    })
+    
+  }
   loadBanner(data:any){
     this.webID.next(data.id);
     this.currentID.subscribe((data)=>{

@@ -1,0 +1,204 @@
+$color1: #00308f;
+$color2: #1974d2;
+$color3: #8edfff;
+$color4: #b2ffff;
+$color5: #ededed;
+$text-color: #000;
+$text-white: white;
+$text-gray: #737373;
+$hover: rgb(23, 103, 182);
+.title {
+  font-size: 2.5rem;
+  color: $color1;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  padding: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    min-width: 130rem;
+    margin-bottom: 20rem;
+  }
+  &__left {
+    width: 10%;
+    ul {
+      cursor: pointer;
+    }
+    li {
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      list-style: none;
+      color: white;
+      background-color: $color2;
+      border: 1px solid #ededed;
+    }
+  }
+  &__right {
+    width: 88%;
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+      .btn-item {
+        width: 20%;
+        margin-right: 2rem;
+        background-color: $color2;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem 2rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:last-child {
+        }
+        &:nth-child(2) {
+          // margin-right: 1rem;
+          // padding: 0.6rem 2rem;
+        }
+        label {
+          font-size: 1.8rem;
+        }
+        input {
+          width: 8rem;
+          border: none;
+          border-bottom: 1px solid white;
+          background-color: inherit;
+          color: white;
+        }
+        button {
+          padding: 0 1rem;
+          border-color: $color2;
+          border-radius: 5px;
+          background-color: white;
+          color: $color2;
+        }
+      }
+    }
+  }
+}
+.add__web {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  &-item {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    label {
+      color: $color1;
+      margin-right: 2rem;
+    }
+    input {
+      padding: 1rem 2rem;
+      border: none;
+      border: 1px solid #ededed;
+      border-radius: 5px;
+      font-size: 1.6rem;
+      width: 70%;
+      &:focus {
+        border-color: #00308f;
+      }
+    }
+
+    &.select {
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+    }
+    select {
+      margin-left: 11.8rem;
+      padding: 0.5rem 2rem;
+      border: none;
+      border: 1px solid #ededed;
+      border-radius: 5px;
+      font-size: 1.6rem;
+    }
+  }
+  &-btn {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    button {
+      padding: 1rem 4rem;
+      color: white;
+      border: none;
+      background-color: $text-white;
+      border-radius: 5px;
+      color: $color1;
+      font-size: 1.6rem;
+      font-weight: bold;
+      border: 2px solid $color2;
+      transition: all 0.2s linear;
+      &:hover {
+        background-color: $hover;
+        color: $text-white;
+      }
+    }
+  }
+}
+.table {
+  display: table;
+  border: 1px solid #ededed;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  thead {
+    th {
+      text-align: center;
+      padding: 1rem;
+      background-color: $color2;
+      color: white;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #f3f4f7;
+      }
+      td {
+        border: 1px solid #ededed;
+        padding: 1rem;
+        font-size: 1.6rem;
+        line-height: 1.42857143;
+        vertical-align: middle !important;
+        text-align: left;
+        input {
+          border: none;
+          font-size: 1.6rem;
+          background-color: inherit;
+          width: 100%;
+        }
+        &:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.icon {
+  font-size: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: $color2;
+}
