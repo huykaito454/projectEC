@@ -18,10 +18,10 @@
                 <label for="">Số điện thoại</label>
                     <input type="text" [(ngModel)]="userPhone" name="img"required="">
             </div> 
-            <div class="add__web-item select">
+            <div  class="add__web-item select">
                 <label for="">Loại tài khoản</label>
                 
-                <select (change)="select($event)"  >
+                <select style="margin-left: 7.5rem;" (change)="select($event)"  >
                     <option *ngFor="let userRole of userRoles" [value]="userRole.value">{{userRole.name}}</option>
                 </select>
             </div>

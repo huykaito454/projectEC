@@ -33,8 +33,10 @@ export class CustomerComponent implements OnInit {
   }
   postUser(){
     const newData =  {fullName : this.userName,email:this.userEmail,password :this.userPassword,phone : this.userPhone,roleId : this.userRoleId};
+    console.log(newData);
     this.handleUser.postUser(newData).subscribe((data) => {
-      if(data.errCode === 0){
+      console.log(data);
+      if(data.errCode == 0){
         alert('Thêm tài khoản thành công');
         this.idManage.loadIdManage(1);
         this.router.navigate(['/'])

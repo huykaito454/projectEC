@@ -17,7 +17,7 @@
             <div class="add__web-item select">
                 <label for="">Loại website</label>
 
-                <select style="margin-left: 13rem;"  (change)="select($event)" >
+                <select style="margin-left: 8.5rem;"  (change)="select($event)" >
                     <option *ngFor="let webCategory of webCategorys" [value]="webCategory.id">{{webCategory.name}}</option>
                 </select>
             </div>

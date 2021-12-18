@@ -6,6 +6,6 @@ import { io } from 'socket.io-client';
 })
 export class SocketService {
   
-  public socket = io('http://localhost:8081',{ transports : ['websocket'] });
+  public socket = io('https://daugiabanner-server.herokuapp.com',{ transports : ['websocket'] });
   constructor() { }
 }

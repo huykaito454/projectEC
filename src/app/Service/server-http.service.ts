@@ -13,7 +13,7 @@ export class ServerHttpService {
       'Content-Type' : 'application/json'
     }),
   }
-  private endpoint = 'http://localhost:8081';
+  private endpoint = 'https://daugiabanner-server.herokuapp.com';
   constructor(private httpClient : HttpClient, private id : IdService) { }
 
   //--------------------------------------------------------------------------------------- Admin

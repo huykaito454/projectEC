@@ -15,11 +15,12 @@ export class WebComponent implements OnInit {
   public webName:any;
   public webLink:any;
   public webImage:any;
-  public webCategoryId = '1';
+  public webCategoryId = '2';
   public webCategorys:any;
   constructor(private handleWeb : ServerHttpService,private router : Router,private idManage : IdService) { }
 
   ngOnInit(): void {
+
     this.handleWeb.getAllWeb().subscribe((data) => {
       this.webs = data.allWeb;
     })

@@ -14,7 +14,6 @@ export class AdminAuctionComponent implements OnInit {
   public idBanner:any;
   public timeStart:any;
   public timeEnd:any;
-
   public webCategoryId = '1';
   public webCategorys:any;
   public bannerStatusId = '0';
@@ -37,11 +36,12 @@ export class AdminAuctionComponent implements OnInit {
     })
   }
   postAuction(){
-    const newData =  {bannerId : this.idBanner, timeStart:this.timeStart,timeEnd:this.timeEnd};
-    console.log(newData);
+    const start = new Date(this.timeStart).getTime();
+    const end = new Date(this.timeEnd).getTime();
+    const newData =  {bannerId : this.idBanner, timeStart:start,timeEnd:end};
     this.handleWeb.postAuction(newData).subscribe((data) => {
       if(data.message === 'Thanh cong'){
-        alert('Thêm banner thành công');
+        alert('Thêm đấu giá thành công');
         this.idManage.loadIdManage(4);
         this.router.navigate(['/'])
         .then(() => {
@@ -70,7 +70,6 @@ export class AdminAuctionComponent implements OnInit {
     })
   }
   deleteBanner(data:any){
-    console.log(data);
     this.handleWeb.deleteAuction(data).subscribe((data2) => {
       console.log(data2);
       if(data2.message == 'Thanh cong'){  

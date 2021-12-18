@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this.dataService.register(newData).subscribe((data) =>{
       // localStorage.setItem('userToken',data.access_token);
       if (data.errCode === 0 ){
-        alert(data.message);
+        alert("Đăng ký thành công");
         this.router.navigate(['/login']);
       }
       else{
