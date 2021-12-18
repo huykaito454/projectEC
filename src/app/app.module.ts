@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormGroupName, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
@@ -33,6 +33,7 @@ import { WebComponent } from './manage/web/web.component';
 import { BannerComponent } from './manage/banner/banner.component';
 import { AdminAuctionComponent } from './manage/admin-auction/admin-auction.component';
 import { AdminOrderComponent } from './manage/admin-order/admin-order.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -63,6 +64,9 @@ import { AdminOrderComponent } from './manage/admin-order/admin-order.component'
     BannerComponent,
     AdminAuctionComponent,
     AdminOrderComponent,
+
+    
+    
    
    
    
@@ -75,7 +79,9 @@ import { AdminOrderComponent } from './manage/admin-order/admin-order.component'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    Ng2SearchPipeModule,
 
+    
   ],
   providers: [
     AuthGuard,

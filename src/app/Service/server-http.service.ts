@@ -83,6 +83,12 @@ export class ServerHttpService {
       .delete<any>(url,this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+  public deleteAuction(data:any): Observable<any> {
+    const url = `${this.endpoint}/admin/api/delete-auction?id=${data}`;
+    return this.httpClient
+      .delete<any>(url,this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
   public postUser(data : any): Observable<any> {
     const url = `${this.endpoint}/admin/api/post-user`;
     return this.httpClient

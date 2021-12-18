@@ -62,7 +62,7 @@
                     <td><input type="text" readonly [(ngModel)]="auction.auctionMoney"  ></td>
                     <td>
                         <i (click)="updateBanner(auction)" class="fas fa-edit icon"></i>
-                        <i (click)="deleteBanner(auction)" style="color: red;" class="fas fa-trash-alt icon"></i>
+                        <i (click)="deleteBanner(auction.id)" style="color: red;" class="fas fa-trash-alt icon"></i>
                         
                     </td>
                 </tr>

@@ -1,4 +1,6 @@
-
+<form class="header__search">
+    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+</form>
 <div class="product" id="product" >
     <div class="product__catalog">
         <p class="title" >All Web</p>
@@ -17,7 +19,7 @@
     </div>
     <div class="product__content">
         <div class="product__group">
-            <a (click)="loadBanner(product)" *ngFor="let product of products" class="product__item"
+            <a (click)="loadBanner(product)" *ngFor="let product of products | filter:searchText  " class="product__item"
             [routerLink]="['/product-details']" routerLinkActive="router-link-active"  >
                 <img src="{{product.image}}" alt="">
                 <span class="product__item-name" > {{product.name}} </span>

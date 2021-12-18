@@ -11,6 +11,9 @@ export class AppComponent {
   title = 'projectEC';
   public roleId = 1;
   public token:any;
+  public citys:any;
+  public code:any;
+  
   constructor(private getUser : ServerHttpService, private roleIdService : IdService) {
   }
   ngOnInit(): void {
@@ -18,5 +21,8 @@ export class AppComponent {
     if (localStorage.getItem("role")) {
       this.roleId = Number(localStorage.getItem("role"));
     }
+
   }
+
+  
 }

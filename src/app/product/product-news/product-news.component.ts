@@ -12,6 +12,8 @@ export class ProductNewsComponent implements OnInit {
 
   public products:any;
   public webID = [];
+
+  searchText:any;
   constructor(private dataService : ServerHttpService, private router : Router, private id : IdService) { }
 
   ngOnInit(): void {

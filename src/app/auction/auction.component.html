@@ -1,16 +1,4 @@
-<div style="margin-top: 2rem; font-size : 1.5rem; color :#00308f;cursor: pointer;" class="line">
-    <span [routerLink]="['/']" routerLinkActive="router-link-active"  >Home</span>
-    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
-    <span [routerLink]="['/product']" routerLinkActive="router-link-active" >All web</span>
-    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
-    <span *ngIf="(banner?.webId === 1)" class="product__item-type" >News</span>
-    <span *ngIf="(banner?.webId === 2)" class="product__item-type" >Entertainment</span>
-    <span *ngIf="(banner?.webId === 3)" class="product__item-type" >Education</span>
-    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
-    <span > {{banner?.name}}</span>
-    <i style="margin: 0 1rem;" class="fas fa-chevron-right"></i>
-    <span > {{banner?.name}} : {{banner?.size}}</span> 
-</div>
+
 <div style="align-items: stretch;" class="product__details">
     <div class="product__details-left">
         <div style="margin-bottom: 2rem; margin-top:2rem" class="product__details-title">

@@ -92,7 +92,30 @@ $hover: rgb(23, 103, 182);
       font-size: 4rem;
     }
   }
-
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    float: right;
+    input {
+      padding: 0.5rem 2rem;
+      font-size: 1.8rem;
+      border: 2px solid #ededed;
+      border-radius: 5px;
+      width: 100%;
+    }
+    button {
+      padding: 0.95rem 1.5rem;
+      margin-left: 0.5rem;
+      border: none;
+      background-color: #1974d2;
+      border-radius: 5px;
+      i {
+        color: white;
+      }
+    }
+  }
   &__nav {
     width: 45%;
     padding: 1rem 0;

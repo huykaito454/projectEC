@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
 
   public banners:any;
   public web:any;
+  searchText:any;
   constructor(private dataService : ServerHttpService, private id : IdService, private socket : SocketService) {
   }
   

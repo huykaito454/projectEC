@@ -10,17 +10,16 @@ export class Interceptor implements HttpInterceptor {
         request : HttpRequest<any>,
         next : HttpHandler
     ):Observable<HttpEvent<any>>{
-        if(localStorage.getItem('access-token') != null){
+    
             // const token = localStorage.getItem('access-token');
-            let token = ''
+            let token = '123213123123123'
             const headers = new HttpHeaders()
             .set('access-token',token)
             .set('Authorization', 'Bearer' + token); 
             const AuthRequest = request.clone({headers:headers});
             return next.handle(AuthRequest);
-        } else{
-            return next.handle(request);
-        }
+        
+        
         
     }
 }

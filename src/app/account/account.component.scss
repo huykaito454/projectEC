@@ -164,6 +164,7 @@ $hover: rgb(23, 103, 182);
         font-weight: bold;
         border: 2px solid $color2;
         transition: all 0.2s linear;
+
         &:hover {
           background-color: $hover;
           color: $text-white;
@@ -211,9 +212,9 @@ $hover: rgb(23, 103, 182);
         line-height: 1.42857143;
         vertical-align: middle !important;
         text-align: left;
+
         &:nth-child(4) {
           text-align: right;
-          
         }
       }
     }

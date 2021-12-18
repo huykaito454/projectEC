@@ -70,17 +70,19 @@ export class AdminAuctionComponent implements OnInit {
     })
   }
   deleteBanner(data:any){
-    this.handleWeb.deleteBanner(data.id).subscribe((data) => {
-      if(data.message === 'Thanh cong'){
-        alert('Xóa banner thành công');
-        this.idManage.loadIdManage(3);
+    console.log(data);
+    this.handleWeb.deleteAuction(data).subscribe((data2) => {
+      console.log(data2);
+      if(data2.message == 'Thanh cong'){  
+        alert('Xóa đấu giá thành công');
+        this.idManage.loadIdManage(4);
         this.router.navigate(['/'])
         .then(() => {
           window.location.reload();
         });
       }
       else{
-        alert(data.message);
+        alert(data2.message);
       }
     })
 
