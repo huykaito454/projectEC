@@ -15,7 +15,7 @@ export class WebComponent implements OnInit {
   public webName:any;
   public webLink:any;
   public webImage:any;
-  public webCategoryId = '2';
+  public webCategoryId = '1';
   public webCategorys:any;
   constructor(private handleWeb : ServerHttpService,private router : Router,private idManage : IdService) { }
 
