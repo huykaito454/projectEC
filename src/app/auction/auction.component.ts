@@ -123,7 +123,7 @@ export class AuctionComponent implements OnInit {
 
   bid(){
     const userMoney = localStorage.getItem('userMoney');
-    if (this.price < this.priceMinBid + (this.banner.price * 0.05)) {
+    if (Number(this.price) < Number(this.priceMinBid) + Number(this.banner.price * 0.05)) {
       alert("Số tiền đặt giá phải lớn hơn giá tối thiểu + bước giá");
     }
     else if ( Number(this.price) > Number(userMoney)){
