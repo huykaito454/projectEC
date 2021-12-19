@@ -16,7 +16,7 @@ const forceSSL = function () {
 app.use(express.static('./dist/projectEC'));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join('projectEC','/dist/projectEC/index.html'));
+  res.sendFile(path.join('projectEC','/dist/banner-auction/index.html'));
 });
 
 app.use(forceSSL());
