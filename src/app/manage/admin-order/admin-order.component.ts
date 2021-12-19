@@ -42,55 +42,7 @@ export class AdminOrderComponent implements OnInit {
       this.auctions = data.allAuction;
     })
   }
-  postBanner(){
-    const newData =  {name : this.bannerName, size:this.bannerSize,image:this.bannerImage,webId:this.webCategoryId,price:this.bannerPrice,status:this.bannerStatusId,time:'0'};
-    console.log(newData);
-    this.handleWeb.postBanner(newData).subscribe((data) => {
-      if(data.message === 'Thanh cong'){
-        alert('Thêm banner thành công');
-        this.idManage.loadIdManage(3);
-        this.router.navigate(['/'])
-        .then(() => {
-          window.location.reload();
-        })
-      }
-      else{
-        alert(data.message);
-      }
-    })
-  }
-  updateBanner(data:any){
-    const newData = {id : data.id, name : data.name, size:data.size,price:data.price, image:data.image,time :data.time,status :data.status, webId:data.webId} 
-    this.handleWeb.putBanner(newData).subscribe((data) => {
-      if(data.message === 'Thanh cong'){
-        alert('Sửa web thành công');
-        this.idManage.loadIdManage(3);
-        this.router.navigate(['/'])
-        .then(() => {
-          window.location.reload();
-        });
-      }
-      else{
-        alert(data.message);
-      }
-    })
-  }
-  deleteBanner(data:any){
-    this.handleWeb.deleteBanner(data.id).subscribe((data) => {
-      console.log(data);
-      if(data.message === 'Thanh cong'){
-        alert('Xóa banner thành công');
-        this.idManage.loadIdManage(3);
-        this.router.navigate(['/'])
-        .then(() => {
-          window.location.reload();
-        });
-      }
-      else{
-        alert(data.message);
-      }
-    })
 
-  }
+
 
 }
