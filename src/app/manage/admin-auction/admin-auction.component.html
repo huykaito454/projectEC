@@ -58,7 +58,9 @@
                     <td>
                         <span>{{auction.timeEnd |date:'short'}}</span>
                     </td>
-                    <td><input type="text" readonly [(ngModel)]="auction.status"></td>
+                    <td *ngIf="(auction.status == 0)" >Sắp đấu giá</td>
+                    <td *ngIf="(auction.status == 1)" >Đang đấu giá</td>
+                    <td *ngIf="(auction.status == 2)" >Đấu giá kết thúc</td>
                     <td><input type="text" readonly [(ngModel)]="auction.auctionMoney"  ></td>
                     <td>
                         <i (click)="updateBanner(auction)" class="fas fa-edit icon"></i>
