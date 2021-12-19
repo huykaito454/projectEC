@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
       else{
         alert(data.message);
         this.router.navigate(['/register']);
+        this.check = 1;
       }
     },
     (err : HttpErrorResponse) => {
