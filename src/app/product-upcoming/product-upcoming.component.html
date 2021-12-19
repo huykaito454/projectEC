@@ -3,17 +3,17 @@
 </form>
 <div style="padding-top: 3rem;" class="product__details-title">
     <p>Các vùng banner sắp được đấu giá</p>
-    <div  [routerLink]="['/product-live']" routerLinkActive="router-link-active"  class="see" >
+    <div  [routerLink]="['/product-details']" routerLinkActive="router-link-active"  class="see" >
         <span>Xem banner đang được đấu giá</span>
         <i style="font-size: 2rem; margin-left :0.5rem" class="fas fa-caret-down"></i>
     </div>
 </div>
 <div class="notify" *ngIf="banners?.length === 0">
     <p>
-        Hiện tại chưa có cuộc đấu giá nào đang diễn ra
+        Hiện tại chưa có cuộc đấu giá nào sắp diễn ra
 </p>
     <p style="font-size: 1.6rem;" >
-        Xem các cuộc đấu giá sắp diễn ra <a style="color: #00308f;"  [routerLink]="['/product-live']" routerLinkActive="router-link-active" >tại đây</a>
+        Xem các cuộc đấu giá đang diễn ra <a style="color: #00308f;"  [routerLink]="['/product-details']" routerLinkActive="router-link-active" >tại đây</a>
 </p>
 </div>
 <form *ngFor="let banner of banners | filter : searchText " class="product__details">

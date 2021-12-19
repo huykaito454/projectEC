@@ -4,7 +4,7 @@
 </form>
 <div style="padding-top: 3rem;" class="product__details-title">
     <p>Các vùng banner đang được đấu giá</p>
-    <div  [routerLink]="['/product-details']" routerLinkActive="router-link-active"  class="see" >
+    <div  [routerLink]="['/product-upcoming']" routerLinkActive="router-link-active"  class="see" >
         <span>Xem banner sắp được đấu giá</span>
         <i style="font-size: 2rem; margin-left :0.5rem" class="fas fa-caret-down"></i>
     </div>
@@ -14,7 +14,7 @@
         Hiện tại chưa có cuộc đấu giá nào đang diễn ra
 </p>
     <p style="font-size: 1.6rem;" >
-        Xem các cuộc đấu giá sắp diễn ra <a style="color: #00308f;"  [routerLink]="['/product-details']" routerLinkActive="router-link-active" >tại đây</a>
+        Xem các cuộc đấu giá sắp diễn ra <a style="color: #00308f;"  [routerLink]="['/product-upcoming']" routerLinkActive="router-link-active" >tại đây</a>
 </p>
 </div>
 <form *ngFor="let banner of banners | filter:searchText " class="product__details">

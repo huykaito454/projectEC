@@ -65,11 +65,9 @@ export class AuctionComponent implements OnInit {
       this.secondText = seconds;
     }
   else {
-    
-    if(this.tables.length === 0){
+    if(this.tables.length == 0){
       const newData = {userId : '999999', auctionId : this.idAuction }
       this.getAuction.winAuction(newData).subscribe((data) => {
-        
       });
       alert("Phiên đấu giá kết thúc");
       clearInterval(this.interval);
@@ -81,7 +79,6 @@ export class AuctionComponent implements OnInit {
       if(winUser === topUser ){
         const newData = {userId : this.tables[0].userId, auctionId : this.idAuction }
         this.getAuction.winAuction(newData).subscribe((data) => {
-          
         });
         alert("Chúc mừng bạn đã đấu giá thành công");
         clearInterval(this.interval);

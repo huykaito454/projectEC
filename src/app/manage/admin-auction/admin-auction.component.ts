@@ -28,6 +28,9 @@ export class AdminAuctionComponent implements OnInit {
   loadAll(){
     this.handleWeb.getAllAuction().subscribe((data) =>{
       this.auctions = data.allAuction;
+      console.log(data.allAuction);
+      const date = new Date (data.allAuction[0].timeStart)
+      console.log(date);
     })
   }
   loadAuction(data:any){
@@ -71,7 +74,6 @@ export class AdminAuctionComponent implements OnInit {
   }
   deleteBanner(data:any){
     this.handleWeb.deleteAuction(data).subscribe((data2) => {
-      console.log(data2);
       if(data2.message == 'Thanh cong'){  
         alert('Xóa đấu giá thành công');
         this.idManage.loadIdManage(4);
