@@ -15,14 +15,15 @@ export class RegisterComponent implements OnInit {
   public phone = '';
   public password = '';
   public passwordConfirm = '';
+  public check = 1;
   constructor( private dataService : ServerHttpService, private router : Router ) { }
 
   ngOnInit(): void {
   }
   OnSubmit(){
+    this.check = 2;
     const newData = { fullName : this.fullName, email: this.email,  phone : this.phone, password:this.password };
     this.dataService.register(newData).subscribe((data) =>{
-      // localStorage.setItem('userToken',data.access_token);
       if (data.errCode === 0 ){
         alert("Đăng ký thành công");
         this.router.navigate(['/login']);

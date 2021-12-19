@@ -28,9 +28,13 @@
                     <label for="checkbox">I've read and agree with Terms of Service
                     </label>
                 </div>
-                <div class="login__form-btn signup-btn" >
+                <div *ngIf="check == 1" class="login__form-btn signup-btn" >
                     <button [disabled]="!RegisterForm.valid" type="submit"><i class="fas fa-arrow-right"></i></button>
                 </div>
+                <div *ngIf="check == 2" class="login__form-btn signup-btn" >
+                    <button [disabled]="!RegisterForm.valid" type="button"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                
             </div>
             <div class="login__form-already">
                 <p>Already have an account ? </p>
