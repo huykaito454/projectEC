@@ -13,10 +13,10 @@ const forceSSL = function () {
     next();
   }
 };
-app.use(express.static('./dist/projectEC'));
+app.use(express.static('./dist/project-ec'));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join('projectEC','/dist/banner-auction/index.html'));
+  res.sendFile(path.join(__dirname,'/dist/project-ec/index.html'));
 });
 
 app.use(forceSSL());
