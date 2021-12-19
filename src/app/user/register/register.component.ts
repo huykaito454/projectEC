@@ -6,7 +6,7 @@ import { ServerHttpService } from 'src/app/Service/server-http.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['../login/login.component.scss']
 })
 export class RegisterComponent implements OnInit {
   isRegisterError : boolean = false;
