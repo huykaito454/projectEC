@@ -1,7 +1,7 @@
 
     <div class="container__right-content">
         <h3 style="color: #00308f;" >Thêm cuộc đấu giá mới</h3>
-        <form (ngSubmit)="postAuction()" class="add__web"> 
+        <form (ngSubmit)="postAuction()" class="add__web" onsubmit="btn.disabled=true; return true;" > 
             <div class="add__web-item">
                 <label for="">ID Banner</label>
                     <input type="text" [(ngModel)]="idBanner" name="name" >
@@ -23,7 +23,7 @@
                 </select>
             </div> -->
             <div class="add__web-btn">
-                    <button type="submit" >Thêm cuộc đấu giá</button>
+                    <button name="btn" type="submit" >Thêm cuộc đấu giá</button>
             </div> 
 
         </form>

@@ -1,7 +1,7 @@
 
     <div class="container__right-content">
         <h3 style="color: #00308f;" >Thêm website mới</h3>
-        <form (ngSubmit)="postWeb()" class="add__web"> 
+        <form (ngSubmit)="postWeb()" class="add__web" onsubmit="btn.disabled=true; return true;"  > 
             <div class="add__web-item">
                 <label for="">Tên website</label>
                     <input type="text" [(ngModel)]="webName" name="name" >
@@ -22,7 +22,7 @@
                 </select>
             </div>
             <div class="add__web-btn">
-                    <button type="submit" >Thêm website</button>
+                    <button name="btn" type="submit" >Thêm website</button>
             </div> 
 
         </form>

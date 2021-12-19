@@ -11,6 +11,7 @@ import { ServerHttpService } from '../Service/server-http.service';
 export class CartComponent implements OnInit {
   public carts:any;
   public yourBanner:any;
+  public check = 1;
   constructor( private getCart : ServerHttpService, private  router :Router) { }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
     })
   }
   checkout(data:any){
+    this.check = 2;
     const newData = {userId : data.userId, auctionId : data.auctionId, yourBanner : data.yourBanner};
     if(data.yourBanner !== ''){
       this.getCart.checkout(newData).subscribe((data) =>{

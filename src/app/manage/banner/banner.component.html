@@ -1,7 +1,7 @@
 
     <div class="container__right-content">
         <h3 style="color: #00308f;" >Thêm banner mới</h3>
-        <form (ngSubmit)="postBanner()" class="add__web"> 
+        <form (ngSubmit)="postBanner()" class="add__web" onsubmit="btn.disabled=true; return true;"> 
             <div class="add__web-item">
                 <label for="">Tên banner</label>
                     <input type="text" [(ngModel)]="bannerName" name="name" >
@@ -26,7 +26,7 @@
                 </select>
             </div>
             <div class="add__web-btn">
-                    <button type="submit" >Thêm banner</button>
+                    <button name="btn" type="submit" >Thêm banner</button>
             </div> 
 
         </form>
