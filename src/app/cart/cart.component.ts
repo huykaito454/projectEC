@@ -11,7 +11,7 @@ import { ServerHttpService } from '../Service/server-http.service';
 export class CartComponent implements OnInit {
   public carts:any;
   public yourBanner:any;
-  public check = 1;
+  public checkCart = 1;
   constructor( private getCart : ServerHttpService, private  router :Router) { }
 
   ngOnInit(): void {
@@ -20,19 +20,25 @@ export class CartComponent implements OnInit {
     })
   }
   checkout(data:any){
-    this.check = 2;
+    this.checkCart = 2;
     const newData = {userId : data.userId, auctionId : data.auctionId, yourBanner : data.yourBanner};
-    if(data.yourBanner !== ''){
+    if(data.yourBanner !== 0){
       this.getCart.checkout(newData).subscribe((data) =>{
-        if(data.message === 'Thanh cong'){
+        console.log(data);
+        if(data.message == 'Thanh cong'){
           alert("Thành công");
           this.router.navigate(['/account']);
+        }
+        else{
+          alert(data.message);
+          this.checkCart = 1
         }
       })
     }
     else{
       alert("Vui lòng nhập URL image");
-
+      this.checkCart = 1
     }
   }
+  
 }

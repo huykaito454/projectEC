@@ -16,10 +16,10 @@
                         <td>{{cart.Auction.Banner.name}} : {{cart.Auction.Banner.size}}</td>
                         <td> <label for="">URL image : </label> <input style="border:0;border-bottom : 1px solid #ededed; background-color: inherit;" type="text" [(ngModel)]="cart.yourBanner" name="something" required ></td>
                         <td style="color: red;">{{cart.Auction.auctionMoney}} <i style="color: #00308f; margin-left :0.5rem " class="fas fa-coins"></i></td>
-                        <td *ngIf="check == 1" class="button-pay" >
+                        <td *ngIf="checkCart == 1" class="button-pay" >
                             <button (click)="checkout(cart)" >Confirm</button>
                         </td>
-                        <td *ngIf="check == 2" class="button-pay" >
+                        <td *ngIf="checkCart == 2" class="button-pay" >
                             <button>Confirm</button>
                         </td>
                     </tr>
