@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   checkout(data:any){
     this.checkCart = 2;
     const newData = {userId : data.userId, auctionId : data.auctionId, yourBanner : data.yourBanner};
-    if(data.yourBanner !== 0){
+    if(data.yourBanner !== null){
       this.getCart.checkout(newData).subscribe((data) =>{
         console.log(data);
         if(data.message == 'Thanh cong'){
