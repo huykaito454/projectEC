@@ -50,7 +50,7 @@ export class CustomerComponent implements OnInit {
     })
   }
   updateUser(data:any){
-    const newData = {id : data.id, fullName : data.fullName,email:data.email,money:data.money,roleId:data.roleId, password:data.password } 
+    const newData = {id : data.id, fullName : data.fullName,email:data.email,money:data.money,roleId:data.roleId, password:data.password, phone:data.phone, address:data.address } 
     this.handleUser.putUser(newData).subscribe((data) => {
       if(data.errCode === 0){
         alert('Sửa tài khoản thành công');
